@@ -1,14 +1,18 @@
-require'bundler'
 require'pry'
-class View
+require'bundler'
+require'csv'
+Bundler.require
 
+class View 
     def create_gossip
+        params = Array.new
         @view = View.new
             puts "Ecrire l'author"
-                var1 = gets.chomp
+                @author = gets.chomp
             puts "Ecrire le content"
-                var2 = gets.chomp
-        return params = {content:var2, author:var1}
+                @content = gets.chomp
+        return params = {author: @author,content: @content}
     end
 end
-puts create_gossip
+
+
